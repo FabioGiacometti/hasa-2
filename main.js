@@ -1,8 +1,30 @@
 const hero = [
-  { url: "./assets/imgs/hero_/slider-1.jpg" },
-  { url: "./assets/imgs/hero_/slider-2.jpg" },
-  { url: "./assets/imgs/hero_/slider-3.jpg" },
-  { url: "./assets/imgs/hero_/slider-5.jpg" },
+  { image: "./assets/imgs/hero/slider_(1).jpg", name: "imagen 1" },
+  { image: "./assets/imgs/hero/slider_(2).jpg", name: "imagen 2" },
+  { image: "./assets/imgs/hero/slider_(3).jpg", name: "imagen 3" },
+  { image: "./assets/imgs/hero/slider_(4).jpg", name: "imagen 4" },
+  { image: "./assets/imgs/hero/slider_(5).jpg", name: "imagen 5" },
+];
+
+const services = [
+  {
+    image: "./assets/imgs/services/products.svg",
+    details:
+      " Nuestra empresa cuenta con una larga trayectoria metalúrgica, especializándonos en fabricación y montaje de cañerías y accesorios de acero para la conducción de fluidos; desde diámetros DN 50mm hasta DN 3000mm.",
+    url: "#products",
+  },
+  {
+    image: "./assets/imgs/services/works.svg",
+    details:
+      " Nuestra empresa cuenta con una larga trayectoria metalúrgica, especializándonos en fabricación y montaje de cañerías y accesorios de acero para la conducción de fluidos; desde diámetros DN 50mm hasta DN 3000mm.",
+    url: "#works",
+  },
+  {
+    image: "./assets/imgs/services/clients.svg",
+    details:
+      "Trabajamos bajo normas, a solicitud de nuestros clientes. Nuestra experiencia y conocimiento en el rubro nos permite ofrecerles en forma exclusiva, asistencia de preventa y postventa, para lograr la mejor solución a los requerimientos del cliente.",
+    url: "#clients",
+  },
 ];
 
 const clients = [
@@ -127,23 +149,50 @@ const clients = [
 ];
 
 const products = [
-  { image: "./assets/imgs/products/product_(1).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(2).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(3).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(4).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(5).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(6).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(7).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(8).jpg", name: "Producto" },
-  { image: "./assets/imgs/products/product_(9).jpeg", name: "Producto" },
+  {
+    image: "./assets/imgs/products/product_(1).jpg",
+    name: "Producto1",
+  },
+  {
+    image: "./assets/imgs/products/product_(2).jpg",
+    name: "Producto2",
+  },
+  {
+    image: "./assets/imgs/products/product_(3).jpg",
+    name: "Producto3",
+  },
+  {
+    image: "./assets/imgs/products/product_(4).jpg",
+    name: "Producto4",
+  },
+  {
+    image: "./assets/imgs/products/product_(5).jpg",
+    name: "Producto5",
+  },
+  {
+    image: "./assets/imgs/products/product_(6).jpg",
+    name: "Producto6",
+  },
+  {
+    image: "./assets/imgs/products/product_(7).jpg",
+    name: "Producto7",
+  },
+  {
+    image: "./assets/imgs/products/product_(8).jpg",
+    name: "Producto8",
+  },
+  {
+    image: "./assets/imgs/products/product_(9).jpeg",
+    name: "Producto9",
+  },
 ];
 
 const obras = [
   {
     active: true,
-    title: "Alberdi",
+    name: "Alberdi",
     date: "Enero 2020 - Enero 2021",
-    contract: "Proveedor - Contratista",
+    details: "Proveedor - Contratista",
     images: [
       "./assets/imgs/obras/alberdi(1).jpg",
       "./assets/imgs/obras/alberdi(2).jpg",
@@ -152,9 +201,9 @@ const obras = [
     ],
   },
   {
-    title: "Los Cedros",
+    name: "Los Cedros",
     date: "Enero 2020 - Enero 2021",
-    contract: "Proveedor - Contratista",
+    details: "Proveedor - Contratista",
     images: [
       "./assets/imgs/obras/cedros(1).jpg",
       "./assets/imgs/obras/cedros(2).jpg",
@@ -162,9 +211,9 @@ const obras = [
     ],
   },
   {
-    title: "Plaza España",
+    name: "Plaza España",
     date: "Enero 2020 - Enero 2021",
-    contract: "Proveedor - Contratista",
+    details: "Proveedor - Contratista",
     images: [
       "./assets/imgs/obras/plaza_espana(1).jpg",
       "./assets/imgs/obras/plaza_espana(2).jpg",
@@ -172,9 +221,9 @@ const obras = [
     ],
   },
   {
-    title: "Sin Nombre",
+    name: "Sin Nombre",
     date: "Enero 2020 - Enero 2021",
-    contract: "Proveedor - Contratista",
+    details: "Proveedor - Contratista",
     images: [
       "./assets/imgs/obras/sin_nombre(1).jpg",
       "./assets/imgs/obras/sin_nombre(2).jpg",
@@ -182,9 +231,9 @@ const obras = [
     ],
   },
   {
-    title: "Suquia",
+    name: "Suquia",
     date: "Enero 2020 - Enero 2021",
-    contract: "Proveedor - Contratista",
+    details: "Proveedor - Contratista",
     images: [
       "./assets/imgs/obras/suquia(1).jpg",
       "./assets/imgs/obras/suquia(2).jpg",
@@ -195,9 +244,9 @@ const obras = [
     ],
   },
   {
-    title: "Tropezon",
+    name: "Tropezon",
     date: "Enero 2020 - Enero 2021",
-    contract: "Proveedor - Contratista",
+    details: "Proveedor - Contratista",
     images: [
       "./assets/imgs/obras/tropezon(1).jpg",
       "./assets/imgs/obras/tropezon(2).jpg",
@@ -207,19 +256,72 @@ const obras = [
   },
 ];
 
+// Generador de slides
 
-let simpleSlide = (data) => `<div class="swiper-slide"><img src='${data}'></div>`
+let simpleSlide = (imageRoute) =>
+  `<div class="swiper-slide"><img src='${imageRoute}'></div>`;
 
-const slideGroup = (dataset, component) => {
-    let arr = []
-    for (let i = 0; i < dataset.length; i++) {
-        arr.push(component(dataset[i].image))
+let titledSlide = (data) =>
+  `<div class="swiper-slide"><h1> ${data.name}</h1><img src='${data.image}'></div>`;
+
+let slideGroup = (dataset) => {
+  let arr = [];
+  for (let i = 0; i < dataset.length; i++) {
+    switch (dataset) {
+      case clients:
+        arr.push(simpleSlide(dataset[i].image));
+        break;
+      case products:
+        console.log("dataset de products", dataset[i]);
+        arr.push(titledSlide(dataset[i]));
+        break;
+      case hero:
+        console.log("dataset de hero", dataset[i]);
+        arr.push(titledSlide(dataset[i]));
     }
-    return arr.join("");}
+  }
+  console.log(arr);
+  return arr.join("");
+};
 
-let section = (id) => document.getElementById(`${id}-swiper`)
-let carouselInserter = (section, component) => section.innerHTML = slideGroup(section, component)
+let carouselInserter = (parameter, targetDiv) => {
+  document.getElementById(`${targetDiv}-swiper`).innerHTML = slideGroup(
+    parameter
+  );
+};
 
-carouselInserter("clients", simpleSlide)
+carouselInserter(clients, "clients");
+carouselInserter(products, "products");
+carouselInserter(hero, "hero");
 
+// iniciador de carouseles
+var swiper1 = new Swiper(".hero-swiper", {
+  spaceBetween: 30,
+  loop: true,
+  effect: 'fade',
+  pagination: {
+    el: ".swiper-pagination1",
+    clickable: true,
+  },
+});
+var swiper2 = new Swiper(".products-swiper", {
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination2",
+    clickable: true,
+  },
+});
 
+var swiper3 = new Swiper(".clients-swiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 3,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  // effect: 'cube',
+  pagination: {
+    el: ".swiper-pagination3",
+    clickable: true,
+  },
+});
