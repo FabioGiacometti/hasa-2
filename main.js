@@ -187,7 +187,7 @@ const products = [
   },
 ];
 
-const obras = [
+const works = [
   {
     active: true,
     name: "Alberdi",
@@ -256,13 +256,18 @@ const obras = [
   },
 ];
 
-// Generador de slides
+// modelos de slides
 
 let simpleSlide = (imageRoute) =>
   `<div class="swiper-slide"><img src='${imageRoute}'></div>`;
 
 let titledSlide = (data) =>
-  `<div class="swiper-slide"><h1> ${data.name}</h1><img src='${data.image}'></div>`;
+  `<div class="swiper-slide"><h1 class="title"> ${data.name}</h1><img src='${data.image}'></div>`;
+
+// let complexSlide = (data, index) => {
+//   console.log("data", data, 'i', index)
+//   for(let i = 0; i < data.lenght)
+// }
 
 let slideGroup = (dataset) => {
   let arr = [];
@@ -278,6 +283,9 @@ let slideGroup = (dataset) => {
       case hero:
         console.log("dataset de hero", dataset[i]);
         arr.push(titledSlide(dataset[i]));
+        break;
+      // case works:
+      //   arr.push(complexSlide(dataset[i], i))
     }
   }
   console.log(arr);
@@ -290,9 +298,11 @@ let carouselInserter = (parameter, targetDiv) => {
   );
 };
 
-carouselInserter(clients, "clients");
-carouselInserter(products, "products");
+// llamador de funciones de carouseles
 carouselInserter(hero, "hero");
+carouselInserter(products, "products");
+carouselInserter(clients, "clients");
+carouselInserter(works, "works");
 
 // iniciador de carouseles
 var swiper1 = new Swiper(".hero-swiper", {
@@ -314,6 +324,19 @@ var swiper2 = new Swiper(".products-swiper", {
 });
 
 var swiper3 = new Swiper(".clients-swiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 3,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  // effect: 'cube',
+  pagination: {
+    el: ".swiper-pagination3",
+    clickable: true,
+  },
+});
+
+var swiper3 = new Swiper(".works-swiper", {
   slidesPerView: 3,
   spaceBetween: 30,
   slidesPerGroup: 3,
